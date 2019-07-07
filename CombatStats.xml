@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>combatstats.getdamage</name>
+			<script>if not damage then damage = 0 end
+if not hits then hits = 0 end
+if not misses then misses = 0 end
+if not attacks then attacks = 0 end
+
+if tonumber(matches[2]) == 0 then 
+	misses = misses + 1
+	attacks = attacks + 1
+	if avdammute == false then
+		cecho("&lt;dodger_blue&gt;Miss recorded")
+	end
+	return
+end
+
+damage = damage + matches[2]
+hits = hits + 1
+attacks = attacks + 1
+if avdammute == false then
+	cecho("&lt;dodger_blue&gt;Damage captured")
+end</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^You do (.*) points of damage.$</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+			</regexCodePropertyList>
+		</Trigger>
+	</TriggerPackage>
+	<TimerPackage />
+	<AliasPackage>
+		<Alias isActive="yes" isFolder="no">
+			<name>combatstats clear</name>
+			<script>damage = 0
+hits = 0
+misses = 0
+attacks = 0
+cecho("&lt;dodger_blue&gt;Avdam cleared")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^combatstats clear$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>combatstats help</name>
+			<script>cecho("\n&lt;dodger_blue&gt;Combatstats, A simple tool to help calculate average damage and accuracy of a fight.\n")
+cecho("\n&lt;dodger_blue&gt;combatstats help  - Display this helpfile.")
+cecho("\n&lt;dodger_blue&gt;combatstats clear - Clear collected data.")
+cecho("\n&lt;dodger_blue&gt;combatstats print - Print collected data")
+cecho("\n&lt;dodger_blue&gt;combatstats mute  - Mute the 'damage grabbed' and 'hit recorded' messages.")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^combatstats help$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>combatstats print</name>
+			<script>avdam = damage/hits
+accuracy = misses/attacks * 100
+
+cecho("\n&lt;dodger_blue&gt;Average damage: " .. damage .. "/" .. hits .. "="..avdam .. "\n")
+cecho("&lt;dodger_blue&gt;Total Accuracy: " .. misses .. "/" .. attacks .. "=".. string.format("&lt;dodger_blue&gt; %.2f", accuracy) .."%\n")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^combatstats print$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>combatstats mute</name>
+			<script>if not avdammute then avdammute = false end
+if avdammute == false then
+	avdammute = true
+	cecho("\n&lt;dodger_blue&gt;Avdam muted.")
+elseif avdammute == true then
+	avdammute = false
+	cecho("\n&lt;dodger_blue&gt;Avdam unmuted.")
+end</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^combatstats mute$</regex>
+		</Alias>
+	</AliasPackage>
+	<ActionPackage />
+	<ScriptPackage>
+		<Script isActive="yes" isFolder="no">
+			<name>combatstats.startup</name>
+			<packageName></packageName>
+			<script>function combatstatsstartup()
+    cecho("\n&lt;dodger_blue&gt;combatstatscalc loaded. 'combatstats help' for more info")
+end
+
+registerAnonymousEventHandler("sysLoadEvent", "combatstatsstartup")</script>
+			<eventHandlerList />
+		</Script>
+	</ScriptPackage>
+	<KeyPackage />
+	<VariablePackage>
+		<HiddenVariables />
+	</VariablePackage>
+</MudletPackage>

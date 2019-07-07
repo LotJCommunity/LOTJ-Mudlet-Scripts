@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>repair.next</name>
+			<script>if not repairauto then return end
+currentRepairItemIndex = currentRepairItemIndex + 1
+if currentRepairItemIndex &gt; table.size(repairList) then
+  send("hold " .. repairList[currentRepairItemIndex - 1])
+  currentRepairItemIndex = 1
+  cecho("&lt;dodger_blue&gt;Repairs complete")
+else
+  send("hold " .. repairList[currentRepairItemIndex - 1])
+  send("remove " .. repairList[currentRepairItemIndex])
+  send("repairarmor " .. repairList[currentRepairItemIndex])
+end</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^You finish your work and hold up the fully repaired armor.$</string>
+				<string>^It doesn't look very damaged at all!$</string>
+				<string>^You don't have that item!$</string>
+				<string>^You finish your work and hold up the fully repaired container.$</string>
+				<string>^You finish your work and hold up the fully repaired armor.$</string>
+				<string>^Thats not a piece of armor!$</string>
+				<string>^You finish your work and hold up the fully repaired shield.$</string>
+				<string>^You finish your work and hold up the fully-restored weapon.$</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+				<integer>1</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>repair.nooil</name>
+			<script>cecho("&lt;dodger_blue&gt;Lack of oil detected, aborting script.")</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^You need some oil to clean the weapon. $</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>repair.noduraplast</name>
+			<script>cecho("&lt;dodger_blue&gt;Lack of duraplast detected, aborting script.")</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^You need something hard to repair the weapons body.$</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>0</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>repair.notoolkit</name>
+			<script>cecho("&lt;dodger_blue&gt;No toolkit detected. Aborting script.")</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^You need a toolkit to repair weapons.$</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>repair.notarmor</name>
+			<script>if not repairauto then return end
+send("repairweapon " .. repairList[currentRepairItemIndex])</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^That's not a piece of armor!$</string>
+				<string>^Looks like it could use some more work though...$</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+				<integer>1</integer>
+			</regexCodePropertyList>
+		</Trigger>
+	</TriggerPackage>
+	<TimerPackage />
+	<AliasPackage>
+		<Alias isActive="yes" isFolder="no">
+			<name>repair clear</name>
+			<script>repairList = {}
+cecho("&lt;dodger_blue&gt;Repair list cleared.")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^repair clear$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>repair add</name>
+			<script>repairList = repairList or {}
+table.insert(repairList, matches[2])
+cecho(matches[2] .. "&lt;dodger_blue&gt; added.")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^repair add (.*)$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>repair start</name>
+			<script>repairauto = true
+repairList = repairList or {}
+currentRepairItemIndex = 1
+send("remove " .. repairList[currentRepairItemIndex])
+send("repairarmor " .. repairList[currentRepairItemIndex])</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^repair start$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>repair list</name>
+			<script>if not repairList then 
+  cecho("&lt;dodger_blue&gt;Repairlist empty. \n")
+else
+  for index,value in ipairs(repairList) do cecho("&lt;dodger_blue&gt;" .. index .. ". " .. value .. "\n") end
+end</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^repair list$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>repair help</name>
+			<script>cecho("\n&lt;dodger_blue&gt;Add items to the list, and it will automatically remove, repair, and re-wear those items \none at a time. The list saves between uses so you don't have to keeping re-adding items.\n \n")
+cecho("&lt;dodger_blue&gt;repair auto            - Toggles auto repairing on and off.\n")
+cecho("&lt;dodger_blue&gt;repair add &lt;item&gt;      - Adds specified item to your repairlist.\n")
+cecho("&lt;dodger_blue&gt;repair clear           - Clears the entire repair list.\n")
+cecho("&lt;dodger_blue&gt;repair remove #        - Removes the numbered item from the list.\n")
+cecho("&lt;dodger_blue&gt;repair help            - Shows this helpfile.\n")
+cecho("&lt;dodger_blue&gt;repair start           - Begins repairing from the top of the list.\n")
+cecho("&lt;dodger_blue&gt;repair resume          - Resumes repairing the current item if you were interrupted.\n")
+cecho("&lt;dodger_blue&gt;repair list            - Prints the current repairlist.\n")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^repair help$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>repair remove</name>
+			<script>table.remove(repairList, matches[2])
+cecho("&lt;dodger_blue&gt;Item removed.")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^repair remove (.*)$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>repair auto</name>
+			<script>if repairauto == true then
+	repairauto = false
+	cecho("&lt;dodger_blue&gt;Repairauto off.")
+elseif repairauto == false then
+	repairauto = true
+	cecho("&lt;dodger_blue&gt;Repairauto on.")
+elseif not repairauto then
+  repairauto = true
+	cecho("&lt;dodger_blue&gt;Repairauto on.")
+end</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^repair auto$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>repair resume</name>
+			<script>send("repairarmor " .. repairList[currentRepairItemIndex])</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^repair resume$</regex>
+		</Alias>
+	</AliasPackage>
+	<ActionPackage />
+	<ScriptPackage>
+		<Script isActive="yes" isFolder="no">
+			<name>autorepairstartup</name>
+			<packageName></packageName>
+			<script>function autorepairstartup()
+    cecho("\n&lt;dodger_blue&gt;autorepair loaded. 'repair help' for more info")
+end
+
+registerAnonymousEventHandler("sysLoadEvent", "autorepairstartup")</script>
+			<eventHandlerList />
+		</Script>
+	</ScriptPackage>
+	<KeyPackage />
+	<VariablePackage>
+		<HiddenVariables />
+	</VariablePackage>
+</MudletPackage>

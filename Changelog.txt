@@ -1,0 +1,94 @@
+﻿--03 July 2017--
+
+-Autoflight-
+Added the ability to use a single-room check without it flipping out.
+Fixed autoflight <on/off> to actually work.
+Added checks in flyto to not run unless all fields have been designated.
+
+
+
+--04 July 2017--
+
+-AutoFlight-
+Fixed issue where you had to input a string for the landing pad name instead of just a number, allowing you to fly from planet to planet without reseting 'setland' every time.
+Also removed 'Avdam' from the Autoflight package.
+
+
+
+--06 July 2017--
+
+-Autoflight-
+Added ' ' around currentflytoplanet to allow travel to Nal hutta and other multiple word planets.
+Added recalc alias to recalculate a jump to your current destination.
+Added a trigger to gag showplanet when starting flyto.
+Fixed so that it only gags showplanet when grabbing the starsystem and coords.
+Changed it so that it runs the showplanet grab only once you've attained hyperspace.
+Added an alias so that calc <planet> will start a hyperspace calculation, with or without autoflight running.
+
+--28 Aug 2017--
+
+-Autorepair-
+Added repairresume as an easy way to start repairing at the same spot in the list if you get interrupted.
+Added ability to repairadd weapons and fix them.
+
+--4 Sep 2017--
+
+-Autocargo-
+Added autocargo. cargohelp for information.
+
+--6 Sep 2017--
+
+-Autocargo-
+Implemented cargo gagging to gag buying and selling cargo messages.
+Implemented the ability to use the trafficking commands 'buycontraband' and 'sellcontraband'
+Added checks in 'cargostart' to make sure cargo pods are filled with the right amount of the right type of cargo before starting cargo.
+Added 'cargostop' for when you want to stop at the next planet.
+
+-Autoflight-
+Added a send("gold") when you get to the cockpit during cargo running to show profit gains.
+
+--17 Jun 2019--
+-Numpad- 
+Mudlet doesn't come with one so I uploaded mine
+Numbers are their corresponding directions, 0 is take all, / is inv, * is gold, . is who, and you can ctrl + numpad to scan in that direction as well
+
+--18 Jun 2019--
+-AvdamCalc- (Changed name to CombatStatsCalc)
+Tweaked it to actually work if damage and hits started as 'nil'
+Changed it so that it ignores misses. 
+Added an alias 'avdammute' to stop it from saying "Damage Captured" every time you do damage.
+Added an accuracy calculator that divides damaging hits by total attacks and gives you a percent to two decimal points.
+
+--19 Jun 2019--
+-Autoresearch
+Added autoresearch. autoresearchstart in a library to automatically research all your skills under 90
+
+--21 Jun 2019--
+-AutoCargo
+Fixed it to actually support more than a two planet circuit.
+Added "cargoprofits" to see your net profit.
+Fixed minor typos and formatting issues.
+
+-AutoResearch
+Fixed it to research those pesky skills that include an underscore
+
+--22 Jun 2019--
+Tweaked autoflight so that if it hits a restricted pad it doesn't set the landing pad for the rest of the route to 1
+
+--27 Jun 2019--
+-Buildship
+Added buildship script. Name a ship with a 'buildship add <ship name>' and as long as the proper building materials are on the ground/in your inv it will build the ship to completion.
+Does not currently support a list of multiple ships, or restarting the build if you get too tired(I've built several ships in a row with the script and never hit that level of movement drain,
+so I didn't add it cause I never saw the line that says you're too tired. If someone discords me @zakattack with the echo I'll add the trigger.
+Includes its own botting trigger, so please disable your own.
+
+-Misc
+Added a little script in most packages to send an echo with the relevant help alias on profile load.
+
+--6 Jul 2019
+-Buildship
+Added more gag triggers to gag others in the room building ships.
+Added buildship.rest to rest for 120 seconds and then resume building.
+
+-Misc
+Cleaned up trigger and alias naming so it looks more uniform and less like an 8 year old wrote it. 
