@@ -92,3 +92,7 @@ Added buildship.rest to rest for 120 seconds and then resume building.
 
 -Misc
 Cleaned up trigger and alias naming so it looks more uniform and less like an 8 year old wrote it. 
+
+--7 Jul 2019
+-CombatStats
+Added dodge rate calculator, cleaned up combatstats print, and fixed te accuracy calculator.
