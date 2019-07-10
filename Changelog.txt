@@ -96,3 +96,7 @@ Cleaned up trigger and alias naming so it looks more uniform and less like an 8 
 --7 Jul 2019
 -CombatStats
 Added dodge rate calculator, cleaned up combatstats print, and fixed te accuracy calculator.
+
+--10 Jul 2019
+-CombatStats
+The triggers I had for gethit.taken and gethit.given were too broad and picking up various area reset messages and other ambient things. Fixed that.

@@ -51,10 +51,14 @@ end</script>
 			<colorTriggerFgColor>#000000</colorTriggerFgColor>
 			<colorTriggerBgColor>#000000</colorTriggerBgColor>
 			<regexCodeList>
-				<string>^Your (.*) (.*) (.*)!$</string>
-				<string>^Your (.*) (.*) (.*).$</string>
+				<string>^Your blast (.*)$</string>
+				<string>^Your pierce (.*)$</string>
+				<string>^Your slash (.*)$</string>
+				<string>^Your stab (.*)$</string>
 			</regexCodeList>
 			<regexCodePropertyList>
+				<integer>1</integer>
+				<integer>1</integer>
 				<integer>1</integer>
 				<integer>1</integer>
 			</regexCodePropertyList>
@@ -129,12 +133,46 @@ end</script>
 			<colorTriggerFgColor>#000000</colorTriggerFgColor>
 			<colorTriggerBgColor>#000000</colorTriggerBgColor>
 			<regexCodeList>
-				<string>^(.*) (.*) (.*) you!$</string>
-				<string>^(.*) (.*) (.*) you.$</string>
+				<string>nicks you</string>
+				<string>barely scratches you</string>
+				<string>scratches you</string>
+				<string>grazes you</string>
+				<string>bruises you</string>
+				<string>hits you</string>
+				<string>injures you</string>
+				<string>wounds you</string>
+				<string>mauls you</string>
+				<string>thrases you</string>
+				<string>decimates you</string>
+				<string>devastates you</string>
+				<string>maims you</string>
+				<string>MUTILATES you</string>
+				<string>DISEMBOWLS you</string>
+				<string>EVISCERATES you</string>
+				<string>MASSACRES you</string>
+				<string>OBLITERATES you</string>
+				<string>ANNIHILATES you</string>
 			</regexCodeList>
 			<regexCodePropertyList>
-				<integer>1</integer>
-				<integer>1</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
 			</regexCodePropertyList>
 		</Trigger>
 	</TriggerPackage>
