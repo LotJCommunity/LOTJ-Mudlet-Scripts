@@ -17,6 +17,6 @@ Autoresearch		- 'Autoresearch start' to automatically research all of your skill
 
 Buildship               - Builds a single ship to completion automatically. 'buildship help' for more info.
 
-*Disclaimer* 
+*Disclaimer* - 
 Despite any similarities, no reference was made to, or code copy/pasted from, any other source, including scripts written by @Johnson 
 and @Xavious.
