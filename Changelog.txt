@@ -100,3 +100,8 @@ Added dodge rate calculator, cleaned up combatstats print, and fixed te accuracy
 --10 Jul 2019
 -CombatStats
 The triggers I had for gethit.taken and gethit.given were too broad and picking up various area reset messages and other ambient things. Fixed that.
+
+--07 Aug 2019
+-AutoResearch
+Had a variable be 'researchauto' instead of 'autoresearch' because I'm an idiot. Pointed out by @Bistion, thanks.
+Added a feature that automatically puts research at the top of the list, because it's always easier to research that first.

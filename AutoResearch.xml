@@ -3,38 +3,6 @@
 <MudletPackage version="1.001">
 	<TriggerPackage>
 		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-			<name>research.next</name>
-			<script>if researchauto == true then
-		currentResearchListIndex = currentResearchListIndex + 1
-		cecho("&lt;dodger_blue&gt;\nResearching " .. researchList[currentResearchListIndex] .. " \n")
-		send("research " .. researchList[currentResearchListIndex])
-end</script>
-			<triggerType>0</triggerType>
-			<conditonLineDelta>0</conditonLineDelta>
-			<mStayOpen>0</mStayOpen>
-			<mCommand></mCommand>
-			<packageName></packageName>
-			<mFgColor>#ff0000</mFgColor>
-			<mBgColor>#ffff00</mBgColor>
-			<mSoundFile></mSoundFile>
-			<colorTriggerFgColor>#000000</colorTriggerFgColor>
-			<colorTriggerBgColor>#000000</colorTriggerBgColor>
-			<regexCodeList>
-				<string>^You search and search but can't find that information.$</string>
-				<string>^You can't learn about that in books. Go find a teacher.$</string>
-				<string>^You can't learn any more about that from books!$</string>
-				<string>^You can't learn smuggling skills from a book!$</string>
-				<string>^You aren't going to learn that from a book. Go find a Wookiee!$</string>
-			</regexCodeList>
-			<regexCodePropertyList>
-				<integer>1</integer>
-				<integer>1</integer>
-				<integer>1</integer>
-				<integer>1</integer>
-				<integer>1</integer>
-			</regexCodePropertyList>
-		</Trigger>
-		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 			<name>research.grab</name>
 			<script>if not autoresearch then return end
 researchList = {}</script>
@@ -152,6 +120,7 @@ if tonumber(matches[7]) &lt; 90 then table.insert(researchList, skill3) end</scr
 			<script>autoresearch = true
 researchList = {}
 cecho("&lt;dodger_blue&gt;Research list cleared.")
+table.insert(researchList, "research")
 send("prac")
 cecho("&lt;dodger_blue&gt;Retrieving research list...\n")
 currentResearchListIndex = 1
@@ -180,7 +149,7 @@ end</script>
 			<name>research.startup</name>
 			<packageName></packageName>
 			<script>function autoresearchstartup()
-    cecho("\n&lt;dodger_blue&gt;autoresearch loaded. Type 'prac'.\n")
+    cecho("\n&lt;dodger_blue&gt;autoresearch loaded. Type 'research start' in any library.\n")
 end
 
 registerAnonymousEventHandler("sysLoadEvent", "autoresearchstartup")</script>
