@@ -105,3 +105,9 @@ The triggers I had for gethit.taken and gethit.given were too broad and picking 
 -AutoResearch
 Had a variable be 'researchauto' instead of 'autoresearch' because I'm an idiot. Pointed out by @Bistion, thanks.
 Added a feature that automatically puts research at the top of the list, because it's always easier to research that first.
+
+--11 Aug 2019
+-AutoResearch
+Added triggers for force spells, bounty hunting skills, and flurry.
+Fixed a syntax error that wasn't picking up the "-" in vibro-blades and also ignoring lines with only one or two skills in them. Big thanks to @Demonnic for the tutelage.
+Set the trigger to only capture skills below 80% to reduce spam.
