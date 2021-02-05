@@ -69,16 +69,16 @@ skill1 = ""
 skill2 = false
 skill3 = false
 
-skill1 = matches[2]
+skill1 = string.trim(matches[2])
 if tonumber(matches[3]) &lt; 80 then table.insert(researchList, skill1) end
 
 if matches[4] then
-	skill2 = matches[4]
+	skill2 = string.trim(matches[4])
 	if tonumber(matches[5]) &lt; 80 then table.insert(researchList, skill2) end
 end
 
 if matches[6] then
-	skill3 = matches[6]
+	skill3 = string.trim(matches[6])
 	if tonumber(matches[7]) &lt; 80 then table.insert(researchList, skill3) end
 end</script>
 				<triggerType>0</triggerType>
