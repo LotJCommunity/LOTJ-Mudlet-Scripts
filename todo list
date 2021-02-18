@@ -1,0 +1,4 @@
+Autoflight:
+  Flyclear to clear all autoflight variables to help with debugging as well as people getting stuck
+  Change 'calc' alias to 'autocalc' alias, so it isn't triggered when people are trying to calc somewhere
+  Edit the trigger that grabs the calculate coords/system name to clear those variables once it's done
