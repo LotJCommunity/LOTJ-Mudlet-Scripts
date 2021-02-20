@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>autoflight.gettargetsystem</name>
+			<script>if not autoflight then return end
+targetsystem = matches[2]</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^Starsystem: (.*) (.*)$</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>autoflight.getplanetcoords</name>
+			<script>if not autoflight then return end
+targetplanetx = matches[2]
+targetplanety = matches[3]
+targetplanetz = tonumber(matches[4]) + 500</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^Coordinates: (.*) (.*) (.*)$</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>autoflight.calculateJump</name>
+			<script>if not autoflight then return end
+gagshowplanet = true
+send("showplanet " .. "'" .. currentflytoplanet .. "'")
+tempTimer(.5, [[send("calculate " .. targetsystem .. " " .. targetplanetx .. " " .. targetplanety .. " " .. targetplanetz)]])
+tempTimer(1, [[gagshowplanet = false]])</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^The ship leaves the platform far behind as it flies into space.$</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>autoflight.HitDatHyperspace</name>
+			<script>if not autoflight then return end
+send("hyperspace")</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>[Status]: Hyperspace Calculations have been completed.</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>3</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>autoflight.attainorbit</name>
+			<script>if not autoflight then return end
+send("land " .. "'" .. currentflytoplanet .. "'")
+tempTimer(1, [[send("land " .. "'" .. currentflytoplanet .. "'" .. " " .. landingPadList[currentlandingpad + 2]) ]])</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^You begin orbiting (.*).$</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>autoflight.hyperspaceexit</name>
+			<script>if not autoflight then return end
+send("speed 100")
+send("course " .. "'" .. currentflytoplanet .. "'")
+send("radar")
+</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>Hyperjump complete.</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>3</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>autoflight.hyperspacewait</name>
+			<script>if not autoflight then return end
+tempTimer(20, [[send("hyperspace")]])</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>You are too close to </string>
+				<string>Please wait until the ship has finished its current maneuver.</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>2</integer>
+				<integer>3</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>autoflight.disembark</name>
+			<script>if not autoflight then return end
+send("autopilot on")
+send(table.concat(currentexitdirections, ";"))
+send("open")
+send("leave")
+send("close " .. currentshipname)
+send("refuel " .. currentshipname .. " full")
+autoflight = false</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>Landing sequence complete.</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>3</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>autoflight.startland</name>
+			<script>if not autoflight then return end
+landingPadList = {}</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>5</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^Possible choices for (.*)$</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+			</regexCodePropertyList>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>autoflight.getlandingpads</name>
+				<script>landingPadList = landingPadList or {}
+table.insert(landingPadList, matches[2])</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>(.*)</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>autoflight.gagshowplanet.firstline</name>
+			<script>if gagshowplanet == true then
+  deleteLine()
+else
+  return
+end</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>99</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>You use the datapad to lookup the information.</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>3</integer>
+			</regexCodePropertyList>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>autoflight.stopgaggingshowplanet</name>
+				<script>setTriggerStayOpen("GagShowplanetfirstline", 0)</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Use 'SHOWPLANET &lt;planet&gt; RESOURCES' for current resources.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>3</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>autoflight.gagshowplanet.body</name>
+				<script>if gagshowplanet == true then
+  deleteLine()
+else
+  return
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>(.*)</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>autoflight.entership</name>
+			<script>if not autoflight then return end
+send("enter " .. currentshipname)
+send("close")
+send(table.concat(currententerdirections, ";"))
+send("autopilot off")
+send("pilot")
+send("launch")
+send("autorecharge on")
+
+if autocargo == true then 
+  send("gold")
+end</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>^You open the hatch (.*)$</string>
+				<string>^It's already open!$</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>1</integer>
+				<integer>1</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>autoflight.overridesetland</name>
+			<script>cecho("&lt;dodger_blue&gt;\nRestricted pad detected, changing default landing pad to #1.")
+tempTimer(1, [[send("land " .. "'" .. currentflytoplanet .. "'" .. " " .. landingPadList[3]) ]])</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>Restricted Landing pad. Limited to clans members and ships only.</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>0</integer>
+			</regexCodePropertyList>
+		</Trigger>
+	</TriggerPackage>
+	<TimerPackage />
+	<AliasPackage>
+		<Alias isActive="yes" isFolder="no">
+			<name>autoflight flyto</name>
+			<script>if not currentshipname then
+  tempTimer(1, [[cecho("&lt;dodger_blue&gt;No ship set, aborting script. Use setship&lt;ship name&gt; to set it.")]])
+  return
+end
+if not currenthatchcode then
+  tempTimer(1, [[cecho("&lt;dodger_blue&gt;No hatchcode set, aborting script. Use sethatch &lt;code&gt; to set it. Set it to 0 if you are the ship owner.")]])
+  return
+end
+if not currententerdirections then
+  tempTimer(1, [[cecho("&lt;dodger_blue&gt;No enter directions set, aborting script. Use entership &lt;directions&gt; to set the directions to the cockpit, separated by spaces.")]])
+  return
+end
+if not currentexitdirections then
+  tempTimer(1, [[cecho("&lt;dodger_blue&gt;No exit directions set, aborting script. Use exitship &lt;directions&gt; to set the directions from the cockpit, separated by spaces.")]])
+  return
+end
+if not currentlandingpad then 
+  tempTimer(1, [[cecho("&lt;dodger_blue&gt;No landing pad set, aborting script. Use setland &lt;#&gt; to set the desired landing pad.")]])
+  return
+end
+autoflight = true
+currentflytoplanet = matches[2]
+send("refuel " .. currentshipname .. " full")
+send("open " .. currentshipname .. " " .. currenthatchcode)</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^flyto (.*)$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>autoflight setship</name>
+			<script>currentshipname = matches[2]
+cecho("&lt;dodger_blue&gt;Ship set to: " .. currentshipname .. "\n")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^setship (.*)$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>autoflight sethatch</name>
+			<script>currenthatchcode = matches[2]
+cecho("&lt;dodger_blue&gt;Hatch code set to: " .. currenthatchcode .. "\n")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^sethatch (.*)$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>autoflight entership</name>
+			<script>currententerdirections = matches[2]:split(" ")
+cecho("&lt;dodger_blue&gt;Enter directions set to: " .. table.concat(currententerdirections, " ") .. "\n")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^entership (.*)$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>autoflight exitship</name>
+			<script>currentexitdirections = matches[2]:split(" ")
+cecho("&lt;dodger_blue&gt;Exit directions set to: " .. table.concat(currentexitdirections, " ") .. "\n")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^exitship (.*)$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>autoflight status</name>
+			<script>if not currentflytoplanet then
+  cecho("&lt;dodger_blue&gt;Current destination:            None selected. \n")
+else
+  cecho("&lt;dodger_blue&gt;Current destination:            " .. currentflytoplanet .. "\n")
+end
+
+if not currentshipname then
+  cecho("&lt;dodger_blue&gt;Ship set to:                    None selected. \n")
+else
+  cecho("&lt;dodger_blue&gt;Ship set to:                    " .. currentshipname .. "\n")
+end
+
+if not currenthatchcode then
+  cecho("&lt;dodger_blue&gt;Hatch code set to:              None set.\n")
+else
+  cecho("&lt;dodger_blue&gt;Hatch code set to:              " .. currenthatchcode .. "\n")
+end
+
+if not currententerdirections then
+  cecho("&lt;dodger_blue&gt;Enter directions set to:        None set.\n")
+else
+  cecho("&lt;dodger_blue&gt;Enter directions set to:        " .. table.concat(currententerdirections, " ") .. "\n")
+end
+
+if not currentexitdirections then
+  cecho("&lt;dodger_blue&gt;Current exit directions set to: None set.\n")
+else
+  cecho("&lt;dodger_blue&gt;Current exit directions set to: " .. table.concat(currentexitdirections, " ") .. "\n")
+end
+
+if not currentlandingpad then
+  cecho("&lt;dodger_blue&gt;Current landing pad set to:     None set.\n")
+else
+  cecho("&lt;dodger_blue&gt;Current landing pad set to:     " .. currentlandingpad .. "\n")
+end</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^autoflight status$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>autoflight clear</name>
+			<script>autoflight = false
+currentflytoplanet = nil
+targetplanetx = nil
+targetplanety = nil
+targetplanetz = nil
+currentshipname = nil
+currenthatchcode = nil
+currententerdirections = nil
+currentexitdirections = nil
+currentlandingpad = nil
+targetsystem = nil
+cecho("&lt;dodger_blue&gt;Flystatus cleared.\n")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^autoflight clear$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>autoflight help</name>
+			<script>cecho("\n&lt;dodger_blue&gt;AutoFlight, an automated way to fly from planet to planet within the LOTJ galaxy. Depends on having ; as your command separator.\n \n")
+cecho("&lt;dodger_blue&gt;autoflight &lt;on/off&gt;      - Toggles autoflight on and off.\n")
+cecho("&lt;dodger_blue&gt;flyto &lt;planet&gt;           - Input your chosen destination, and will automatically attempt to begin AutoFlight\n")
+cecho("&lt;dodger_blue&gt;autocalc &lt;planet&gt;            - Will calculate a jump to the planet specified, with or without autoflight on.\n")
+cecho("&lt;dodger_blue&gt;autoflight status        - Shows current values for all of AutoFlight's fields.\n")
+cecho("&lt;dodger_blue&gt;setship &lt;Ship name&gt;      - Sets the name of the ship you wish to use.\n")
+cecho("&lt;dodger_blue&gt;sethatch &lt;hatchcode&gt;     - Sets the hatchcode of the ship you wish to use. You must still put in a value(0 works) even if you own the ship.\n")
+cecho("&lt;dodger_blue&gt;entership &lt;directions&gt;   - Sets the directions needed to get to the cockpit from the hatch room. Separate with spaces, i.e n u ne n\n")
+cecho("&lt;dodger_blue&gt;exitship &lt;directions&gt;    - Same as entership, but opposite.\n")
+cecho("&lt;dodger_blue&gt;setland &lt;#&gt;       			 - Input the number(from top to bottom) of desired landing pad at destination.\n")
+cecho("&lt;dodger_blue&gt;autoflight clear                 -Clears all autoflight variables.\n")
+cecho("&lt;dodger_blue&gt;autoflight help                  - Shows this helpfile.\n")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^autoflight help$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>autoflight on</name>
+			<script>autoflight = true
+cecho("&lt;dodger_blue&gt;Autoflight on.")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^autoflight on$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>autoflight setland</name>
+			<script>currentlandingpad = tonumber(matches[2])
+cecho("&lt;dodger_blue&gt;Landing pad set to: " .. currentlandingpad .. "\n")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^setland (.*)$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>autoflight off</name>
+			<script>autoflight = false
+cecho("&lt;dodger_blue&gt;Autoflight off.")
+</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^autoflight off$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>autoflight calc</name>
+			<script>gagshowplanet = true
+currentflytoplanet = matches[2]
+send("showplanet " .. "'" .. matches[2] .. "'")
+tempTimer(.5, [[send("calculate " .. targetsystem .. " " .. targetplanetx .. " " .. targetplanety .. " " .. targetplanetz)]])
+tempTimer(1, [[gagshowplanet = false]])</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^autocalc (.*)$</regex>
+		</Alias>
+	</AliasPackage>
+	<ActionPackage />
+	<ScriptPackage>
+		<Script isActive="yes" isFolder="no">
+			<name>autoflight.startup</name>
+			<packageName></packageName>
+			<script>function autoflightstartup()
+    cecho("\n&lt;dodger_blue&gt;autoflight loaded. 'autoflight help' for more info")
+end
+
+registerAnonymousEventHandler("sysLoadEvent", "autoflightstartup")</script>
+			<eventHandlerList />
+		</Script>
+	</ScriptPackage>
+	<KeyPackage />
+	<VariablePackage>
+		<HiddenVariables />
+	</VariablePackage>
+</MudletPackage>
