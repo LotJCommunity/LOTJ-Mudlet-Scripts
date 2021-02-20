@@ -51,7 +51,7 @@ targetplanetz = tonumber(matches[4]) + 500</script>
 			<script>if not autoflight then return end
 gagshowplanet = true
 send("showplanet " .. "'" .. currentflytoplanet .. "'")
-tempTimer(.5, [[send("calculate " .. targetsystem .. " " .. targetplanetx .. " " .. targetplanety .. " " .. targetplanetz)]])
+tempTimer(.5, [[send("calculate \"" .. targetsystem .. "\" " .. targetplanetx .. " " .. targetplanety .. " " .. targetplanetz)]])
 tempTimer(1, [[gagshowplanet = false]])</script>
 			<triggerType>0</triggerType>
 			<conditonLineDelta>0</conditonLineDelta>
@@ -522,7 +522,7 @@ cecho("&lt;dodger_blue&gt;Autoflight off.")
 			<script>gagshowplanet = true
 currentflytoplanet = matches[2]
 send("showplanet " .. "'" .. matches[2] .. "'")
-tempTimer(.5, [[send("calculate " .. targetsystem .. " " .. targetplanetx .. " " .. targetplanety .. " " .. targetplanetz)]])
+tempTimer(.5, [[send("calculate \"" .. targetsystem .. "\" " .. targetplanetx .. " " .. targetplanety .. " " .. targetplanetz)]])
 tempTimer(1, [[gagshowplanet = false]])</script>
 			<command></command>
 			<packageName></packageName>
