@@ -51,7 +51,7 @@ targetplanetz = tonumber(matches[4]) + 500</script>
 			<script>if not autoflight then return end
 gagshowplanet = true
 send("showplanet " .. "'" .. currentflytoplanet .. "'")
-tempTimer(.5, [[send("calculate \"" .. targetsystem .. "\" " .. targetplanetx .. " " .. targetplanety .. " " .. targetplanetz)]])
+tempTimer(.5, [[send("calculate " .. targetsystem .. " " .. targetplanetx .. " " .. targetplanety .. " " .. targetplanetz)]])
 tempTimer(1, [[gagshowplanet = false]])</script>
 			<triggerType>0</triggerType>
 			<conditonLineDelta>0</conditonLineDelta>
@@ -480,13 +480,14 @@ cecho("&lt;dodger_blue&gt;Flystatus cleared.\n")</script>
 			<script>cecho("\n&lt;dodger_blue&gt;AutoFlight, an automated way to fly from planet to planet within the LOTJ galaxy. Depends on having ; as your command separator.\n \n")
 cecho("&lt;dodger_blue&gt;autoflight &lt;on/off&gt;      - Toggles autoflight on and off.\n")
 cecho("&lt;dodger_blue&gt;flyto &lt;planet&gt;           - Input your chosen destination, and will automatically attempt to begin AutoFlight\n")
-cecho("&lt;dodger_blue&gt;calc &lt;planet&gt;            - Will calculate a jump to the planet specified, with or without autoflight on.\n")
+cecho("&lt;dodger_blue&gt;autocalc &lt;planet&gt;            - Will calculate a jump to the planet specified, with or without autoflight on.\n")
 cecho("&lt;dodger_blue&gt;autoflight status        - Shows current values for all of AutoFlight's fields.\n")
 cecho("&lt;dodger_blue&gt;setship &lt;Ship name&gt;      - Sets the name of the ship you wish to use.\n")
 cecho("&lt;dodger_blue&gt;sethatch &lt;hatchcode&gt;     - Sets the hatchcode of the ship you wish to use. You must still put in a value(0 works) even if you own the ship.\n")
 cecho("&lt;dodger_blue&gt;entership &lt;directions&gt;   - Sets the directions needed to get to the cockpit from the hatch room. Separate with spaces, i.e n u ne n\n")
 cecho("&lt;dodger_blue&gt;exitship &lt;directions&gt;    - Same as entership, but opposite.\n")
 cecho("&lt;dodger_blue&gt;setland &lt;#&gt;       			 - Input the number(from top to bottom) of desired landing pad at destination.\n")
+cecho("&lt;dodger_blue&gt;autoflight clear                 -Clears all autoflight variables.\n")
 cecho("&lt;dodger_blue&gt;autoflight help                  - Shows this helpfile.\n")</script>
 			<command></command>
 			<packageName></packageName>
@@ -522,11 +523,11 @@ cecho("&lt;dodger_blue&gt;Autoflight off.")
 			<script>gagshowplanet = true
 currentflytoplanet = matches[2]
 send("showplanet " .. "'" .. matches[2] .. "'")
-tempTimer(.5, [[send("calculate \"" .. targetsystem .. "\" " .. targetplanetx .. " " .. targetplanety .. " " .. targetplanetz)]])
+tempTimer(.5, [[send("calculate " .. targetsystem .. " " .. targetplanetx .. " " .. targetplanety .. " " .. targetplanetz)]])
 tempTimer(1, [[gagshowplanet = false]])</script>
 			<command></command>
 			<packageName></packageName>
-			<regex>^calc (.*)$</regex>
+			<regex>^autocalc (.*)$</regex>
 		</Alias>
 	</AliasPackage>
 	<ActionPackage />
