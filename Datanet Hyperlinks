@@ -7,11 +7,14 @@
 <!DOCTYPE MudletPackage>
 <MudletPackage version="1.001">
     <TriggerPackage>
-        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="yes" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
             <name>datanet</name>
-            <script>selectString(matches[1], 1)
-setUnderline(true)
-setLink([[send("datanet ]] .. matches[1] .. [[")]], "Datanet link: " .. matches[1])</script>
+            <script>for i = 1,#matches,4
+do
+  selectString(matches[i], 1)
+  setUnderline(true)
+  setLink([[send("datanet ]] .. matches[i] .. [[")]], "Datanet link: " .. matches[i])
+end</script>
             <triggerType>0</triggerType>
             <conditonLineDelta>0</conditonLineDelta>
             <mStayOpen>0</mStayOpen>
