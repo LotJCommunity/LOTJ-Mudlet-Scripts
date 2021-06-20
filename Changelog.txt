@@ -121,3 +121,5 @@ Added "" to wrap the planet name, for planets like Nal hutta. Thanks kkbug!
 --20 Jun 2021
 -Autoresearch
 Fixed the script to capture 3 word skills like "Space Combat 1"
+-AutoFlight
+Made it handle restricted pads a lot better. Also made it so using "showplanet <planet> resources" wouldn't bork up the jump calculations
