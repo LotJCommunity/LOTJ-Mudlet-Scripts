@@ -117,3 +117,7 @@ Set the trigger to only capture skills below 80% to reduce spam.
 Changed the "calc <planet>" alias to "autocalc <planet>"; people were accidentally using the alias when trying to calc normally. Thanks Frump
 Added "autoflight clear" to clear all the variables.
 Added "" to wrap the planet name, for planets like Nal hutta. Thanks kkbug!
+
+--20 Jun 2021
+-Autoresearch
+Fixed the script to capture 3 word skills like "Space Combat 1"
