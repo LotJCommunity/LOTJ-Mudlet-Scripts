@@ -13,7 +13,7 @@ LOTJ Chatbox    	- A sidebar designed to capture various channels of communicati
 
 Numpad	   		- Since Mudlet does not come with preset numpad macros, I exported the ones I use so you don't have to make your own. Numbers are their corresponding directions, 0 is take all, / is inv, * is gold, . is who, and you can ctrl + numpad to scan in that direction as well
 
-Autoresearch		- 'Autoresearch start' to automatically research all of your skills that are under 90%
+Autoresearch		- use 'Autoresearch start' in a library to automatically research all of your skills that are under 90%
 
 Buildship               - Builds a single ship to completion automatically. 'buildship help' for more info.
 
