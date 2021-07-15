@@ -123,3 +123,11 @@ Added "" to wrap the planet name, for planets like Nal hutta. Thanks kkbug!
 Fixed the script to capture 3 word skills like "Space Combat 1"
 -AutoFlight
 Made it handle restricted pads a lot better. Also made it so using "showplanet <planet> resources" wouldn't bork up the jump calculations
+
+--14 Jul 2021
+-AutoFlight
+Fixed bug where systems with a single quote in the name (e.g. Y'toub) would not be navcalc'd correctly, by replacing the ' with \" (for both flyto and autocalc).
+Removed autoflight enabled check from autoflight.gettargetsystem and autoflight.getplanetcoords so autocalc works as advertised (regardless of autoflight status).
+Replaced explicit ";" command stacker with Mudlet's getCommandSeparator() in autoflight.entership and autoflight.disembark.
+Updated autoflight help per above.
+Thanks Marowi!
