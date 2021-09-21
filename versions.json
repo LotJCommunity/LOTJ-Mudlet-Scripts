@@ -1,0 +1,10 @@
+[
+    {"name": "AutoCargo", "version": "", "url": "https://github.com/LotJCommunity/LOTJ-Mudlet-Scripts/raw/master/AutoCargo.xml"},
+    {"name": "AutoFlight", "version": "", "url": "https://github.com/LotJCommunity/LOTJ-Mudlet-Scripts/raw/master/AutoFlight.mpackage"},
+    {"name": "AutoResearch", "version": "", "url": "https://github.com/LotJCommunity/LOTJ-Mudlet-Scripts/raw/master/AutoResearch.mpackage"},
+    {"name": "BuildShip", "version": "", "url": "https://github.com/LotJCommunity/LOTJ-Mudlet-Scripts/raw/master/BuildShip.xml"},
+    {"name": "CombatStats", "version": "", "url": "https://github.com/LotJCommunity/LOTJ-Mudlet-Scripts/raw/master/CombatStats.xml"},
+    {"name": "LotjArmor", "version": "", "url": "https://github.com/LotJCommunity/LOTJ-Mudlet-Scripts/raw/master/LotjArmor.mpackage"},
+    {"name": "autorepair", "version": "", "url": "https://github.com/LotJCommunity/LOTJ-Mudlet-Scripts/raw/master/autorepair.xml"},
+    {"name": "autoteach", "version": "", "url": "https://github.com/LotJCommunity/LOTJ-Mudlet-Scripts/raw/master/autoteach.mpackage"}
+]
