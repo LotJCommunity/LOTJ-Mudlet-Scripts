@@ -6,5 +6,6 @@
     {"name": "CombatStats", "version": "", "url": "https://github.com/LotJCommunity/LOTJ-Mudlet-Scripts/raw/master/CombatStats.xml"},
     {"name": "LotJArmor", "version": "", "url": "https://github.com/LotJCommunity/LOTJ-Mudlet-Scripts/raw/master/LotJArmor.mpackage"},
     {"name": "autorepair", "version": "", "url": "https://github.com/LotJCommunity/LOTJ-Mudlet-Scripts/raw/master/autorepair.xml"},
-    {"name": "autoteach", "version": "", "url": "https://github.com/LotJCommunity/LOTJ-Mudlet-Scripts/raw/master/autoteach.mpackage"}
+    {"name": "autoteach", "version": "", "url": "https://github.com/LotJCommunity/LOTJ-Mudlet-Scripts/raw/master/autoteach.mpackage"},
+    {"name": "LotjComlinks", "version": "1.0.0", "url": "https://github.com/LotJCommunity/LOTJ-Mudlet-Scripts/raw/master/LotjComlinks.mpackage"}
 ]
