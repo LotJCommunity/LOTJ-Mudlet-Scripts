@@ -131,3 +131,9 @@ Removed autoflight enabled check from autoflight.gettargetsystem and autoflight.
 Replaced explicit ";" command stacker with Mudlet's getCommandSeparator() in autoflight.entership and autoflight.disembark.
 Updated autoflight help per above.
 Thanks Marowi!
+
+--15 Nov 2021
+-Autoresearch
+Added the message for maxed out buildship.
+Changed autoresearch.help to have the proper command.
+Stopped it from capturing the skills list again(effectively doubling it) if you used 'prac' while researching.
