@@ -137,3 +137,11 @@ Thanks Marowi!
 Added the message for maxed out buildship.
 Changed autoresearch.help to have the proper command.
 Stopped it from capturing the skills list again(effectively doubling it) if you used 'prac' while researching.
+
+--31 Nov 2021
+-Buildship
+Changed all trigger, alias, variable and script names to be more coherent and uniform.
+Added another pattern to autobuildship.nextcomponent that was causing issues.
+Removed the rest trigger, since it is no longer necessary.
+Changed the amount of components you grab since they weigh a lot more now. 
+Probably some other stuff.
