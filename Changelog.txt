@@ -145,3 +145,8 @@ Added another pattern to autobuildship.nextcomponent that was causing issues.
 Removed the rest trigger, since it is no longer necessary.
 Changed the amount of components you grab since they weigh a lot more now. 
 Probably some other stuff.
+
+--02 Dec 2021
+-AutoCargo 
+Made the 'cargo clear' alias also clear the 'cargostop' variable.
+Thanks, Shlandril!
