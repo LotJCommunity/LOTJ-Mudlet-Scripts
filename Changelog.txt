@@ -150,3 +150,7 @@ Probably some other stuff.
 -AutoCargo 
 Made the 'cargo clear' alias also clear the 'cargostop' variable.
 Thanks, Shlandril!
+
+--18 Jan 2022
+-AutoCargo
+Brought in line with changes 2074. Updated and fixed the cargo stop command to simply pause the process, to allow the use of a bank, and the cargo resume command to resume the process without re-entering variables.
