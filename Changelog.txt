@@ -154,3 +154,11 @@ Thanks, Shlandril!
 --18 Jan 2022
 -AutoCargo
 Brought in line with changes 2074. Updated and fixed the cargo stop command to simply pause the process, to allow the use of a bank, and the cargo resume command to resume the process without re-entering variables.
+
+--20 Jan 2022
+-Autocargo
+Added clearing both cargoindex and planetindex to 'Cargo clear'
+-Autoflight
+Fixed the calc and autocalc to work with the Y'toub system
+-Chatbox
+Removed deleteLine(), since it was bypassing logging
