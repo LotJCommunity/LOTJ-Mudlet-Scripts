@@ -158,7 +158,9 @@ Brought in line with changes 2074. Updated and fixed the cargo stop command to s
 --20 Jan 2022
 -Autocargo
 Added clearing both cargoindex and planetindex to 'Cargo clear'
+Allows for multiple-word ship names now
 -Autoflight
 Fixed the calc and autocalc to work with the Y'toub system
+Allows for multiple-word ship names now
 -Chatbox
 Removed deleteLine(), since it was bypassing logging
