@@ -15,7 +15,3 @@ Numpad	   	  	- Since Mudlet does not come with preset numpad macros, I exported
 Autoresearch		- use 'autoresearch start' in a library to automatically research all of your skills that are under 90%
 
 Buildship       - Builds a single ship to completion automatically. 'buildship help' for more info.
-
-*Disclaimer* - 
-Despite any similarities, no reference was made to, or code copy/pasted from, any other source, including scripts written by @Johnson 
-and @Xavious.
