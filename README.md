@@ -1,15 +1,17 @@
 # LOTJ-Mudlet-Scripts
-Mudlet scripts written by Zakattack for use in Legends of the Jedi, with help from @Demonnic and the rest of the Mudlet core devs.
+Mudlet scripts written by various LOTJ players. Please reach out on the #scripting channel of our discord if you have issues or feedback.
 
 **Autoflight 2.0**  - An automated flight system to remove the tediousness of flying from planet to planet. 'autoflight help' for more options.
 
 **Autocargo 2.0** - An automated cargo hauler that supports any number of planets. 'autocargo help' for more information. NEEDS AUTOFLIGHT TO FUNCTION
 
-**AutoRepair 2.0** - An automated gear repairer which removes, repairs, and holds gear added to a list Does not repair weapons. 'repair help' for more options.
+**AutoRepair 2.0** - An automated gear repairer which removes, repairs, and holds gear added to a list Does not repair weapons. 'autorepair help' for more options.
 
 **Autoresearch** - use 'autoresearch start' in a library to automatically research all of your skills that are under 90%
 
-**Buildship** - Builds a single ship to completion automatically. 'buildship help' for more info.
+**AutoStudy**  - An automated study system to cycle through items as you study them for science. 'autostudy help' for commands
+
+**Buildship** - Builds a single ship to completion automatically. 'autobuildship help' for more info.
 
 **CombatStats**	- A simple calculator that grabs damage output and averages damage per hit. 'combatstats help' for more options.
 
